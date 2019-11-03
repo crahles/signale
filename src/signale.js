@@ -61,7 +61,7 @@ class Signale {
 
   get timestamp() {
     const _ = new Date();
-    return [_.getHours(), _.getMinutes(), _.getSeconds()].join(':');
+    return _.toTimeString().substring(0,8);
   }
 
   get filename() {
