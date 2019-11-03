@@ -8,7 +8,7 @@ const pkgConf = require('pkg-conf');
 const pkg = require('./../package.json');
 const defaultTypes = require('./types');
 
-const {green, grey, red, underline, yellow} = chalk;
+const {green, dim, red, underline, yellow} = chalk;
 
 let isPreviousLogInteractive = false;
 const defaults = pkg.options.default;
@@ -195,7 +195,7 @@ class Signale {
 
     if (meta.length !== 0) {
       meta.push(`${figures.pointerSmall}`);
-      return meta.map(item => grey(item));
+      return meta.map(item => dim(item));
     }
 
     return meta;
@@ -251,7 +251,7 @@ class Signale {
         signale.push(name);
       }
 
-      signale.push(grey(rest.map(l => l.replace(/^/, '\n')).join('')));
+      signale.push(dim(rest.map(l => l.replace(/^/, '\n')).join('')));
       return signale.join(' ');
     }
 
